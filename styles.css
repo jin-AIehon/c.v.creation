@@ -1,0 +1,402 @@
+/* ベーススタイル */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    /* フェードイン処理を行う場合は script.js 側でopacityを制御 */
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  h1, h2, h3 {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+  
+  .section-inner {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* ===============================
+     ヘッダー（固定表示）
+     =============================== */
+  .site-header {
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    position: fixed;  /* 固定 */
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    /* 高さを60px前後に仮設定 */
+    height: 60px;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* 中身のレイアウト */
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    height: 100%;
+  }
+  
+  /* ロゴ */
+  .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* PC用ナビゲーション */
+  .nav-menu ul {
+    display: flex;
+    gap: 1rem;
+  }
+  .nav-menu ul li {
+    list-style: none;
+  }
+  .nav-menu ul li a {
+    padding: 8px;
+    transition: color 0.3s;
+  }
+  .nav-menu ul li a:hover {
+    color: #FFD400;
+  }
+  
+  /* ハンバーガーメニュー (スマホ用) */
+  .hamburger {
+    width: 30px;
+    height: 24px;
+    position: relative;
+    display: none; /* PCでは非表示 */
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  .hamburger span {
+    display: block;
+    height: 3px;
+    background-color: #333;
+    border-radius: 3px;
+  }
+  
+  /* スマホ用ドロワーメニュー */
+  .mobile-nav {
+    display: none;
+    background-color: #fff;
+    position: absolute;
+    top: 60px; /* ヘッダー下に表示 */
+    left: 0;
+    width: 100%;
+    border-top: 1px solid #eee;
+  }
+  .mobile-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .mobile-nav ul li {
+    border-bottom: 1px solid #eee;
+  }
+  .mobile-nav ul li a {
+    display: block;
+    padding: 12px 20px;
+    transition: background-color 0.3s;
+  }
+  .mobile-nav ul li a:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* ===============================
+     ヒーローセクション
+     =============================== */
+  /* ヘッダー高さ(60px)を差し引いて、画面全体に画像を表示 */
+  .hero {
+    margin-top: 60px; /* ヘッダーの分だけ下げる */
+    height: calc(100vh - 60px); /* 画面高さ - ヘッダー高さ */
+    min-height: 400px;
+    background: url('images/hero.png') center center/cover no-repeat;
+    position: relative;
+  }
+  
+  .hero-top-text,
+  .hero-bottom-text {
+    /* 透過オレンジ */
+    background-color: rgba(255, 212, 0, 0.3); 
+    /* テキストまわりの余白。必要に応じて調整 */
+    padding: 1rem 2rem;
+  
+    /* 中央寄せしたい場合は、inline-block＋margin指定もOK */
+    width: 100%; display: block; margin: 0;        /* 幅を画面にあわせる */
+    margin: 0 auto;              /* 横中央寄せ */
+    border-radius: 8px;          /* 角を少し丸める例 */
+  }
+  
+  
+  /* テキストを上下に配置 */
+  .hero-content {
+    position: relative;
+    z-index: 1; /* オーバーレイより前に */
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 上部, 下部 にテキストを振り分け */
+    padding: 0; /* 上下に少し余白 */
+  }
+  
+  /* 上部テキスト */
+  .hero-top-text {
+    text-align: center;
+    margin-top: 0; /* お好みで調整 */
+  }
+  .hero-top-text h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  .hero-top-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+  }
+  
+  /* 下部テキスト */
+  .hero-bottom-text {
+    text-align: center;
+    margin-bottom: 0; /* お好みで調整 */
+    color: #333;
+    line-height: 1.8;
+  }
+  
+  /* ===============================
+     代表紹介セクション
+     =============================== */
+  .representative {
+    padding: 3rem 0;
+    background-color: #fdfdfd;
+  }
+  .section-title {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .rep-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .rep-image {
+    max-width: 200px;
+    text-align: center;
+  }
+  .rep-image img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+  }
+  .rep-name {
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+  .rep-name span {
+    font-weight: normal;
+    font-size: 0.9rem;
+    display: block;
+  }
+  .rep-text {
+    max-width: 700px;
+  }
+  .rep-sign {
+    margin-top: 1rem;
+    text-align: right;
+  }
+  
+  /* ===============================
+     求人情報セクション
+     =============================== */
+  .job-info {
+    background-color: #fff7cc;
+    padding: 3rem 0;
+    text-align: center;
+  }
+  .job-lead {
+    margin-bottom: 2rem;
+  }
+  .job-images {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .job-img img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s;
+    border-radius: 4px;
+  }
+  .job-img:hover img {
+    transform: scale(1.05);
+  }
+  
+  /* ===============================
+     ニュース＆お知らせセクション
+     =============================== */
+  .news {
+    padding: 3rem 0;
+    background-color: #fff;
+  }
+  .news-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+  .news-item {
+    width: 300px;
+    background-color: #fafafa;
+    border-radius: 4px;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  .news-item img {
+    width: 250px;
+    height: 150px;
+    object-fit: cover;
+  }
+  .news-item h3 {
+    font-size: 1.2rem;
+    margin: 1rem 0 0.5rem;
+  }
+  .news-item p {
+    margin-bottom: 1rem;
+  }
+  .news-item a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #FFD400;
+    color: #333;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    font-size: 0.9rem;
+  }
+  .news-item a:hover {
+    background-color: #ffcc00;
+  }
+  
+  /* ===============================
+     お問い合わせセクション
+     =============================== */
+  .contact-section {
+    padding: 3rem 0;
+    background-color: #fff7cc;
+    text-align: center;
+  }
+  .contact-section h2 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+  }
+  .contact-phone {
+    margin-bottom: 2rem;
+  }
+  .contact-phone span {
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+  .contact-image img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 4px;
+    margin: 0 auto;
+  }
+  
+  /* ===============================
+     フッター
+     =============================== */
+  .site-footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+  }
+  .footer-inner {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .footer-inner p {
+    font-size: 0.9rem;
+  }
+  
+  /* ===============================
+     レスポンシブデザイン
+     =============================== */
+  @media screen and (max-width: 768px) {
+    /* ハンバーガーアイコンを表示 */
+    .hamburger {
+      display: flex;
+    }
+  
+    /* PCナビ非表示 */
+    .nav-menu {
+      display: none;
+    }
+  
+    /* ドロワーメニューは.active時に表示 */
+    .mobile-nav.active {
+      display: block;
+    }
+  
+    /* ヒーローの文字サイズを少し小さく */
+    .hero-top-text h1 {
+      font-size: 2rem;
+    }
+  
+    /* 代表紹介やニュースの並びを縦方向に */
+    .rep-content {
+      flex-direction: column;
+      align-items: center;
+    }
+    .rep-text {
+      text-align: center;
+      max-width: 100%;
+    }
+  
+    .news-list {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+  /* ▼ 固定ヘッダーの被りを回避するための余白設定 ▼ */
+#representative,
+#jobs,
+#news,
+#contact {
+  scroll-margin-top: 60px; /* 固定ヘッダー + 少し余裕 */
+}

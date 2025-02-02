@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>C.V.Creation</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ======================
+       ヘッダー（固定）
+       ====================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <!-- ロゴや会社名 -->
+        <a href="#">C.V.Creation</a>
+      </div>
+
+      <!-- PC用ナビ -->
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="#">ホーム</a></li>
+          <li><a href="#representative">代表紹介</a></li>
+          <li><a href="#jobs">求人情報</a></li>
+          <li><a href="#news">ニュース＆お知らせ</a></li>
+          <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+      </nav>
+
+      <!-- ハンバーガーメニュー（スマホ表示用） -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <!-- スマホ用ドロワーメニュー -->
+    <nav class="mobile-nav" id="mobileNav">
+      <ul>
+        <li><a href="#">ホーム</a></li>
+        <li><a href="#representative">代表紹介</a></li>
+        <li><a href="#jobs">求人情報</a></li>
+        <li><a href="#news">ニュース＆お知らせ</a></li>
+        <li><a href="#contact">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ======================
+       メインビジュアル (ホーム画面)
+       ====================== -->
+  <section class="hero">
+    <div class="hero-content">
+      <!-- 上部に会社名と説明 -->
+      <div class="hero-top-text">
+        <h1>C.V.Creation</h1>
+        <p>
+          1人1人の「魅力」と「価値」を最大限に引き出すことで生まれる<br>
+          人にしかできないサービスの「創造」を実現していきます。
+        </p>
+      </div>
+
+      <!-- 下部に住所 -->
+      <div class="hero-bottom-text">
+        <p>
+          <b>〒422-8045 静岡県静岡市駿河区西島1007アピアランス西島103</b><br>
+          <b>人材アウトソーシング／イベント企画・運営・事務</b><br>
+          <b>ライバー育成、ライブ配信事業</b>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================
+       メインコンテンツ
+       ====================== -->
+  <main>
+    <!-- 代表紹介 -->
+    <section class="representative" id="representative">
+      <div class="section-inner">
+        <h2 class="section-title">代表紹介</h2>
+        <div class="rep-content">
+          <div class="rep-image">
+            <!-- 代表の写真 -->
+            <img src="images/representative.png" alt="代表写真" />
+            <p class="rep-name">澤田 宙和<br><span>代表</span></p>
+          </div>
+          <div class="rep-text">
+            <p>
+              皆さま、こんにちは。<br>
+              C.V.Creationの代表、澤田宙和です。<br><br>
+              当社は、静岡県を中心に地元で働きたい方と企業をつなぐ地域密着型の人材会社です。<br>
+              特に通信業界に強みを持ち、一人ひとりに最適な仕事を紹介しています。<br><br>
+              「一人ひとりの魅力と価値を最大限に引き出す」をモットーに、<br>
+              安心して働ける環境を提供し、地域の発展に貢献してまいります。<br><br>
+              今後ともよろしくお願いいたします。
+            </p>
+            <p class="rep-sign">C.V.Creation<br>代表 澤田宙和</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 求人情報 -->
+    <section class="job-info" id="jobs">
+      <div class="section-inner">
+        <h2 class="section-title">求人情報</h2>
+        <p class="job-lead">
+          静岡県各地で携帯販売のイベントスタッフ募集！<br>
+          画像をクリックして求人ページにジャンプ！<br>
+          ※どの画像もリンク先は同じです
+        </p>
+        <div class="job-images">
+          <a href="#" class="job-img">
+            <img src="images/job1.png" alt="求人イメージ1" />
+          </a>
+          <a href="#" class="job-img">
+            <img src="images/job2.png" alt="求人イメージ2" />
+          </a>
+          <a href="#" class="job-img">
+            <img src="images/job3.png" alt="求人イメージ3" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ニュース＆お知らせ -->
+    <section class="news" id="news">
+      <div class="section-inner">
+        <h2 class="section-title">ニュース＆お知らせ</h2>
+        <div class="news-list">
+          <article class="news-item">
+            <img src="images/news1.png" alt="静岡市イメージ">
+            <h3>静岡市 ○○店舗様</h3>
+            <p>笑顔が絶えず、<br>
+               まさかの出会いのある現場でした。</p>
+            <a href="#">続きを読む</a>
+          </article>
+          <article class="news-item">
+            <img src="images/news2.png" alt="富士市イメージ">
+            <h3>富士市 ○○店舗様</h3>
+            <p>接客数は少なかったけど、<br>
+                じっくりご説明できました。</p>
+            <a href="#">続きを読む</a>
+          </article>
+          <article class="news-item">
+            <img src="images/news3.png" alt="藤枝市イメージ">
+            <h3>藤枝市 ○○店舗様</h3>
+            <p>現場で意気投合し、<br>
+                新しい仲間が増えました。</p>
+            <a href="#">続きを読む</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- お問い合わせセクション -->
+    <section class="contact-section" id="contact">
+      <div class="section-inner">
+        <h2>お気軽にお問い合わせください</h2>
+        <p class="contact-phone">連絡先<br><span>080-6987-8004</span></p>
+        <!-- 担当者イメージ (仮) -->
+        <div class="contact-image">
+          <img src="images/contact.png" alt="担当者イメージ" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================
+       フッター
+       ====================== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>©︎ 2025 C.V.Creation</p>
+    </div>
+  </footer>
+
+  <!-- JavaScriptファイル読み込み -->
+  <script src="script.js"></script>
+</body>
+</html>
