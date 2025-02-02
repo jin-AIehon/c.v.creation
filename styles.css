@@ -131,7 +131,7 @@
     margin-top: 60px; /* ヘッダーの分だけ下げる */
     height: calc(100vh - 60px); /* 画面高さ - ヘッダー高さ */
     min-height: 400px;
-    background: img src('images/hero.png') center center/cover no-repeat;
+    background: url('c.v.creation/images/hero.png') center center/cover no-repeat;
     position: relative;
   }
   
